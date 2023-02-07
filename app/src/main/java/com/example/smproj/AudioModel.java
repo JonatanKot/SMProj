@@ -1,4 +1,4 @@
-package com.example.easytutomusicapp;
+package com.example.smproj;
 
 import java.io.Serializable;
 

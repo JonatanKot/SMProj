@@ -1,4 +1,4 @@
-package com.example.easytutomusicapp;
+package com.example.smproj;
 
 import android.content.Context;
 import android.content.Intent;
@@ -11,12 +11,11 @@ import android.widget.TextView;
 
 import java.util.ArrayList;
 
-import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
 public class MusicListAdapter extends RecyclerView.Adapter<MusicListAdapter.ViewHolder>{
 
-    ArrayList<AudioModel> songsList;
+    ArrayList<AudioModel> songsList = SongsList.getInstance();
     Context context;
 
     public MusicListAdapter(ArrayList<AudioModel> songsList, Context context) {
@@ -46,12 +45,19 @@ public class MusicListAdapter extends RecyclerView.Adapter<MusicListAdapter.View
             public void onClick(View v) {
                 //navigate to another acitivty
 
-                MyMediaPlayer.getInstance().reset();
+                //if (MyMediaPlayer.releaseInstance())
+                if (!(MyMediaPlayer.currentIndex == position)) {
+                    MyMediaPlayer.getInstance().reset();
+                }
                 MyMediaPlayer.currentIndex = position;
                 Intent intent = new Intent(context,MusicPlayerActivity.class);
-                intent.putExtra("LIST",songsList);
+                intent.putExtra("CURRENT",position);
                 intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
-                context.startActivity(intent);
+                try{context.startActivity(intent);}
+                catch (Exception e){
+                    System.out.println(e.getMessage());
+                    e.printStackTrace();
+                }
 
             }
         });

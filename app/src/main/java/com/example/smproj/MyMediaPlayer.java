@@ -1,4 +1,4 @@
-package com.example.easytutomusicapp;
+package com.example.smproj;
 
 import android.media.MediaPlayer;
 
@@ -12,5 +12,15 @@ public class MyMediaPlayer {
         return instance;
     }
 
+    public static Boolean releaseInstance(){
+        if(instance != null){
+            instance.release();
+            instance = null;
+            return true;
+        }
+        return false;
+    }
+
     public static int currentIndex = -1;
+    //public static AudioModel impulseResp = null;
 }

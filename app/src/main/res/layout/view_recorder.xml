@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity">
+
+    <TextView
+        android:id="@+id/recorder_title"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Recorder"
+        android:textSize="20dp"
+        android:textStyle="bold"
+        android:padding="10dp"
+        android:layout_centerHorizontal="true"/>
+
+    <LinearLayout
+        android:id="@+id/recorder_buttons1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:weightSum="2"
+        android:layout_below="@+id/recorder_title">
+
+        <Button
+            android:id="@+id/recorder_play"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="Play"/>
+
+        <Button
+            android:id="@+id/recorder_record"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:layout_toEndOf="@id/recorder_play"
+            android:text="Record"/>
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/recorder_buttons2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:weightSum="2"
+        android:layout_below="@+id/recorder_buttons1">
+
+        <Button
+            android:id="@+id/recorder_pause"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:enabled="false"
+            android:text="Pause"/>
+
+        <Button
+            android:id="@+id/recorder_stop"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:enabled="false"
+            android:layout_toEndOf="@id/recorder_pause"
+            android:text="Stop"/>
+    </LinearLayout>
+
+
+</RelativeLayout>

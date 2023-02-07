@@ -1,0 +1,111 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity">
+    
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/server_text"
+        android:textColor="@color/black"
+        android:text="Lyrics search"
+        android:textSize="20dp"
+        android:textStyle="bold"
+        android:padding="10dp"
+        android:layout_centerHorizontal="true"/>
+
+    <LinearLayout
+        android:id="@+id/lyrics_labelbar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_below="@id/server_text"
+        android:weightSum="2" >
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:id="@+id/lyric_author_label"
+            android:padding="10dp"
+            android:maxLines="1"
+            android:ellipsize="end"
+            android:text="Author:"
+            android:textColor="@color/black"/>
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:id="@+id/lyric_title_label"
+            android:layout_toEndOf="@id/lyric_author_label"
+            android:padding="10dp"
+            android:maxLines="1"
+            android:ellipsize="end"
+            android:text="Title:"
+            android:textColor="@color/black"/>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/lyrics_searchbar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_below="@id/lyrics_labelbar"
+        android:weightSum="2" >
+
+        <EditText
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:id="@+id/lyric_author_text_prompt"
+            android:padding="10dp"
+            android:maxLines="1"
+            android:ellipsize="end"
+            android:textColor="@color/black"/>
+
+        <EditText
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:id="@+id/lyric_title_text_prompt"
+            android:layout_toEndOf="@id/lyric_author_text_prompt"
+            android:padding="10dp"
+            android:maxLines="1"
+            android:ellipsize="end"
+            android:textColor="@color/black"/>
+
+    </LinearLayout>
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/lyrics_search_button"
+        android:text="Find"
+        android:layout_below="@+id/lyrics_searchbar"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/no_songs_server_text"
+        android:text="NO LYRICS FOUND"
+        android:layout_centerInParent="true"
+        android:visibility="gone"/>
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/recycler_view_server"
+        android:layout_below="@+id/lyrics_search_button"/>
+
+
+
+</RelativeLayout>

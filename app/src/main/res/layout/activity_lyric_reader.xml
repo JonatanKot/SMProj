@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#F50057"
+    tools:context=".LyricReaderActivity">
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/lyric_reader_title"
+        android:text="Title of the song"
+        android:singleLine="true"
+        android:ellipsize="marquee"
+        android:textColor="@color/white"
+        android:textSize="25dp"
+        android:textStyle="bold"
+        android:layout_margin="20dp"
+        android:padding="20dp"
+        />
+    <TextView
+        android:id="@+id/lyric_reader_content"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:gravity="left"
+        android:singleLine="false"
+        android:text="Lyrics content"
+        android:scrollbars = "vertical"
+        android:layout_below="@id/lyric_reader_title"
+
+        android:textColor="@color/white"
+        android:layout_margin="20dp"
+        android:textSize="20dp">
+    </TextView>
+</RelativeLayout>
